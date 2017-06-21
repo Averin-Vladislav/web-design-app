@@ -1,80 +1,27 @@
 import React, {Component} from 'react';
 import './App.css';
-import Contact from './contact';
+import MainPage from './mainPage.js';
+import AboutPage from './aboutPage.js';
+import { BrowserRouter as Router, Route, IndexRoute, Link} from 'react-router-dom';
+import { createHistory as browserHistory } from 'history';
 
 class App extends Component {
-    CONTACTS = [
-        {
-            id: 1,
-            name: 'Vladislav Averin',
-            phone: '+375298015156',
-            img: {
-                link: process.env.PUBLIC_URL + '/vlad.jpg',
-                alt: 'vladislav averin\'s avatar'
-            }
-        }, {
-            id: 2,
-            name: 'Nadezhda Tsegelnik',
-            phone: '+375297404766',
-            img: {
-                link: process.env.PUBLIC_URL + '/nadya.jpg',
-                alt: 'nadzezhda tsegelnik\'s avatar'
-            }
-        }, {
-            id: 3,
-            name: 'Kovalchuk Ekaterina',
-            phone: '+375445304704',
-            img: {
-                link: process.env.PUBLIC_URL + '/katya.jpg',
-                alt: 'kovalchuk ekaterina\'s avatar'
-            }
-        }, {
-            id: 4,
-            name: 'Viktor Kravchenko',
-            phone: '+375447422103',
-            img: {
-                link: process.env.PUBLIC_URL + '/vitya.jpg',
-                alt: 'viktor kravchenko\'s avatar'
-            }
-        },
-    ];
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchResult: this.CONTACTS
-        }
-    }
-
-    handleChange = (event) => {
-        let searchQuery = event.target.value.toLowerCase();
-        let searchResult = this.CONTACTS.filter((item, index) => {
-            let currentValue = item.name.toLowerCase();
-            return currentValue.indexOf(searchQuery) !== -1;
-        });
-
-        this.setState({
-            searchResult: searchResult
-        });
-    }
-
     render() {
         return (
-            <div className="container">
-                <label className="searchLabel" htmlFor="searchInput">Search Contacts</label>
-                <input id="searchInput" className="searchInput" type="text" placeholder="type..." onChange={this.handleChange}/>
-                <ul className="concactList">
-                    {
-                        this.state.searchResult.map((item, index) => {
-                            return <Contact
-                                key={item.id}
-                                name={item.name}
-                                phone={item.phone}
-                                img={item.img} />;
-                        })
-                    }
-                </ul>
-            </div>
+            <Router history={browserHistory}>
+                <div>
+                    <div className='container'>
+                        <h1>App</h1>
+                        <ul>
+                            <li><Link to='/'>MainPage</Link></li>
+                            <li><Link to='/about'>About</Link></li>
+                        </ul>
+                    </div>
+
+                    <Route exact path='/' component={MainPage}/>
+                    <Route exact path='/about' component={AboutPage}/>
+                </div>
+            </Router>
         );
     }
 }
