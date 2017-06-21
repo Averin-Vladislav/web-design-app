@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import './project.css'
+import '../shared/shared.css';
 
 class Project extends Component {
     render() {
