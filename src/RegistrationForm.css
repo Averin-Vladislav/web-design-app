@@ -1,0 +1,14 @@
+.emailField {
+    width: 300px;
+    height: 100px;
+    display: block;
+    border-radius: 2px;
+    background-color: blue;
+}
+
+.submitButton {
+    width: 350px;
+    height: 350px;
+    display: block;
+    background-color: orange;
+}
