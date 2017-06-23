@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 
 class Menu extends Component {
     render() {
+        if (!this.props.isVisible) {
+            return null;
+        }
+
         return (
             <div>
                 <h1>Menu</h1>

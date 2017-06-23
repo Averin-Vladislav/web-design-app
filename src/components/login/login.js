@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './login.css';
-import '../shared/shared.css';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {

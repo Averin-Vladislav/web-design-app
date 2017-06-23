@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import './calculator.css'
-import Menu from '../shared/menu/menu.js';
+import './calculator.css';
 
 class Calculator extends Component {
     render() {
         return (
             <div>
-                <Menu/>
                 <h1>Calculator</h1>
             </div>
         );

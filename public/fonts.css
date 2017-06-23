@@ -1,0 +1,32 @@
+/* font-family: "BladiOneSlab4FBold" */
+@font-face {
+    font-family: "BladiOneSlab4FBold";
+    src: url("./fonts/BladiOneSlab4FBold/BladiOneSlab4FBold.eot");
+    src: url("./fonts/BladiOneSlab4FBold/BladiOneSlab4FBold.eot?#iefix")format("embedded-opentype"),
+    url("./fonts/BladiOneSlab4FBold/BladiOneSlab4FBold.woff") format("woff"),
+    url("./fonts/BladiOneSlab4FBold/BladiOneSlab4FBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "Embrima" */
+@font-face {
+    font-family: "Embrima";
+    src: url("./fonts/Ebrima/Ebrima.eot");
+    src: url("./fonts/Ebrima/Ebrima.eot?#iefix")format("embedded-opentype"),
+    url("./fonts/Ebrima/Ebrima.woff") format("woff"),
+    url("./fonts/Ebrima/Ebrima.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "Embrima" */
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("./fonts/MyriadProRegular/MyriadProRegular.eot");
+    src: url("./fonts/MyriadProRegular/MyriadProRegular.eot?#iefix")format("embedded-opentype"),
+    url("./fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"),
+    url("./fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

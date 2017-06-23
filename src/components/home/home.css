@@ -1,0 +1,58 @@
+.homeAdaptivePresentationImage {
+    height: 700px;
+    margin: 65px 0 0 80px;
+    display: inline-block;
+}
+
+.homeContentContainer {
+    display: inline-block;
+    vertical-align: top;
+    margin: 44px 0 0 127px;
+}
+
+.homeContentText {
+    width: 580px;
+}
+
+.homeContentText > span {
+    display: block;
+    font-family: "Embrima";
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.homeContentText > .homeMainHeading {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.homeContentButton {
+    display: inline-block;
+    width: 242px;
+    height: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    font-family: "MyriadProRegular";
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 40px 40px 0 0;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+.homeLogoImage {
+    width: 114px;
+    float: left;
+}
+
+.homeLogoTitle {
+    font-family: "BladiOneSlab4FBold";
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    width: 85px;
+    display: inline-block;
+    margin: 20px 0 45px 5px;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/home/home.js';
-import './components/shared/reset.css';
+import Root from './components/root/root.js';
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));

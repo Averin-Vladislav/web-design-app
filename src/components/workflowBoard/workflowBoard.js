@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import './workflowBoard.css'
-import '../shared/shared.css';
-import  Menu from '../shared/menu/menu.js'
+import './workflowBoard.css';
 
 class WorkflowBoard extends Component {
     render() {
         return (
             <div>
-                <Menu/>
                 <h1>Workflow Board</h1>
             </div>
         );

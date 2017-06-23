@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './register.css';
-import '../shared/shared.css';
 
 import { Link } from 'react-router-dom';
 
