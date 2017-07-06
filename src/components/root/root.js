@@ -1,5 +1,5 @@
 import './root.css'
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Home from '../home/home.js';
 import Header from '../header/header.js';
@@ -16,6 +16,7 @@ import Settings from '../settings/settings.js';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createHistory as browserHistory } from 'history';
+import createHistory from 'history/createBrowserHistory'
 
 class Root extends Component {
     constructor(props) {
@@ -25,13 +26,22 @@ class Root extends Component {
         };
     }
 
+    componentWillMount() {
+        let history = createHistory();
+
+        history.listen((location, action) => {
+          console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
+          console.log(`The last navigation action was ${action}`)
+        })
+    }
+
     render() {
         return (
             <Router history={ browserHistory }>
                 <div>
                     <Header className="headerContainer" currentPageTitle={ this.state.currentPageTitle }/>
                     <div className="contentContainer">
-                        <Menu className="menuContainer" isVisible={this.state.currentPageTitle === 'home' ? false : true}/>
+                        <Menu className="menuContainer" isVisible={ this.state.currentPageTitle === 'home' ? false : true }/>
                         <Route exact path='/' component= { Home } />
                         <Route exact path='/register' component={ Register }/>
                         <Route exact path='/login' component={ Login }/>
