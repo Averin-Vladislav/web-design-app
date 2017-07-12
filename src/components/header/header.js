@@ -3,6 +3,35 @@ import './header.css';
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
+    componentWillMount() {
+        console.log('header componentWillMount');
+    }
+
+    componentDidMount() {
+        console.log('header componentDidUpdate');
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('header componentWillReceiveProps', nextProps);
+    }
+
+    shouldComponentUpdate(nexProps, nextState) {
+        console.log('header shouldComponentUpdate', nexProps, nextState);
+        return true;
+    }
+
+    componentWillUpdate(nexProps, nextState) {
+        console.log('header componentWillUpdate', nexProps, nextState);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('header componentDidUpdate', prevProps, prevState);
+    }
+
+    componentWillUnmount() {
+        console.log('header componentWillUnmount');
+    }
+
     render() {
         return (
             <div className="headerContainer">

@@ -16,7 +16,6 @@ import Settings from '../settings/settings.js';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createHistory as browserHistory } from 'history';
-import createHistory from 'history/createBrowserHistory'
 
 class Root extends Component {
     constructor(props) {
@@ -24,21 +23,54 @@ class Root extends Component {
         this.state = {
             currentPageTitle: 'home'
         };
+
+        console.log('constructor');
     }
 
     componentWillMount() {
-        let history = createHistory();
+        console.log('componentWillMount');
+    }
 
-        history.listen((location, action) => {
-          console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-          console.log(`The last navigation action was ${action}`)
-        })
+    componentDidMount() {
+        console.log('componentDidUpdate');
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('componentWillReceiveProps', nextProps);
+    }
+
+    shouldComponentUpdate(nexProps, nextState) {
+        console.log('shouldComponentUpdate', nexProps, nextState);
+        return true;
+    }
+
+    componentWillUpdate(nexProps, nextState) {
+        console.log('componentWillUpdate', nexProps, nextState);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate', prevProps, prevState);
+    }
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount');
+    }
+
+    handleClick() {
+        //TODO: change trigger event
+        console.log(window.location.pathname);
+        var newPageTitle = window.location.pathname.substring(1);
+        var newPageTitle = window.location.pathname === '/' ? 'home' : window.location.pathname.substring(1);
+
+        this.setState({
+            currentPageTitle: newPageTitle
+        });
     }
 
     render() {
         return (
             <Router history={ browserHistory }>
-                <div>
+                <div onClick={ this.handleClick.bind(this) }>
                     <Header className="headerContainer" currentPageTitle={ this.state.currentPageTitle }/>
                     <div className="contentContainer">
                         <Menu className="menuContainer" isVisible={ this.state.currentPageTitle === 'home' ? false : true }/>
