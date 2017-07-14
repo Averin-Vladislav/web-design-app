@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 class Login extends Component {
     render() {
         return (
-            <div>
+            <div className="loginContainer">
                 <h1>Login</h1>
-                <form className="registerForm">
+                <form className="loginForm">
                     <label htmlFor="usernameInput">Username</label>
                     <input id="usernameInput" type="text" placeholder="username"></input>
                     <label htmlFor="passwordInput">Password</label>

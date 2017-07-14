@@ -14,7 +14,7 @@ class Home extends Component {
     render() {
         return (
             <div className="homeContainer">
-                <img className="homeAdaptivePresentationImage" src={process.env.PUBLIC_URL + '/adaptive-presentation.png'} alt="logo"/>
+                <img className="homeAdaptivePresentationImage" src={ process.env.PUBLIC_URL + '/adaptive-presentation.png' } alt="logo"/>
                 <div className="homeContentContainer">
                     <div className="homeLogoContainer">
                         <img className="homeLogoImage" src={process.env.PUBLIC_URL + '/vitruvian-man.png'} alt="logo"/>

@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+# additional files
+/prototype
+
 # testing
 /coverage
 

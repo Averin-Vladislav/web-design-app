@@ -1,3 +1,11 @@
-.registerForm label, .registerForm input {
+.registerContainer {
+    position: relative;
+    z-index: 10;
+}
+
+.registerForm label,
+.registerForm input,
+.button {
     display: block;
+    color: white;
 }

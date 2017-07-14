@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class Register extends Component {
     render() {
         return (
-            <div>
+            <div className="registerContainer">
                 <h1>Register</h1>
                 <form className="registerForm">
                     <label htmlFor="usernameInput">Username</label>

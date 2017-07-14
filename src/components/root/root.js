@@ -15,7 +15,6 @@ import Projects from '../projects/projects.js';
 import Settings from '../settings/settings.js';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createHistory as browserHistory } from 'history';
 
 class Root extends Component {
     constructor(props) {
@@ -56,25 +55,32 @@ class Root extends Component {
         console.log('componentWillUnmount');
     }
 
-    handleClick() {
+    checkUrlChange() {
         //TODO: change trigger event
         console.log(window.location.pathname);
-        var newPageTitle = window.location.pathname.substring(1);
         var newPageTitle = window.location.pathname === '/' ? 'home' : window.location.pathname.substring(1);
-
+        newPageTitle = newPageTitle.replace(/([A-Z])/g, ' $1').trim();
         this.setState({
             currentPageTitle: newPageTitle
         });
     }
 
+    isMenuVisible() {
+        return (this.state.currentPageTitle === 'home' ||
+                this.state.currentPageTitle === 'register' ||
+                this.state.currentPageTitle === 'login') ? false : true;
+    }
+
     render() {
         return (
-            <Router history={ browserHistory }>
-                <div onClick={ this.handleClick.bind(this) }>
+            <Router>
+                <div className="pageContainer" onClick= { this.checkUrlChange.bind(this) } onKeyDown= { this.checkUrlChange.bind(this) }>
                     <Header className="headerContainer" currentPageTitle={ this.state.currentPageTitle }/>
+                    <div className="overlay"></div>
+                    <img className="background" src={ process.env.PUBLIC_URL + '/background.jpg' } alt="background"/>
                     <div className="contentContainer">
-                        <Menu className="menuContainer" isVisible={ this.state.currentPageTitle === 'home' ? false : true }/>
-                        <Route exact path='/' component= { Home } />
+                        <Menu className="menuContainer" isVisible={ this.isMenuVisible.bind(this)() }/>
+                        <Route exact path='/' component= { Home }/>
                         <Route exact path='/register' component={ Register }/>
                         <Route exact path='/login' component={ Login }/>
                         <Route exact path='/calculator' component={ Calculator }/>

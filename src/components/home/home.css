@@ -1,3 +1,11 @@
+.homeContainer {
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
 .homeAdaptivePresentationImage {
     height: 700px;
     margin: 65px 0 0 80px;
